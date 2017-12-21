@@ -15,8 +15,6 @@ jobs:
       - restore_cache:
           keys:
             - v1-android-{{ .Branch }}
-            - v1-android-
-
       - run: $ANDROID_HOME/tools/android list target
       - run: make bootstrap-circle
       - run: echo y | android update sdk --no-ui --all --filter android-25
